@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+            /* Navbar */
+
+            body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      background-color: #eee;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #2196F3;
+      border-radius: 5px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+    
+  <div class="settings-section" id="data-section">
+    <h2><i class="fas fa-database"></i> Data & Storage</h2>
+    
+    <div class="form-group">
+      <label>Data Usage</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Storage Used</h3>
+          <p>You've used 1.2 GB of your 5 GB storage</p>
+          <div class="progress">
+            <div class="progress-bar" style="width: 24%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Download Options</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Auto-Download Course Materials</h3>
+          <p>Automatically download course materials for offline access</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="auto-download" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Video Quality</label>
+      <p class="text-muted">Select your preferred video quality for courses</p>
+      <select id="video-quality" class="form-control">
+        <option value="auto">Auto (Based on connection)</option>
+        <option value="low">Low (360p)</option>
+        <option value="medium">Medium (480p)</option>
+        <option value="high">High (720p)</option>
+        <option value="hd">HD (1080p)</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>Clear Data</label>
+      <div class="settings-grid">
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Cache</h3>
+            <p>Clear temporary files</p>
+          </div>
+          <button class="btn btn-outline" id="clear-cache">Clear</button>
+        </div>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Download History</h3>
+            <p>Clear download records</p>
+          </div>
+          <button class="btn btn-outline" id="clear-download-history">Clear</button>
+        </div>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Search History</h3>
+            <p>Clear search records</p>
+          </div>
+          <button class="btn btn-outline" id="clear-search-history">Clear</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Data Export</label>
+      <p class="text-muted">Download a copy of your data from EduSphere</p>
+      <button class="btn btn-outline" id="export-data">
+        <i class="fas fa-download"></i> Export My Data
+      </button>
+    </div>
+    
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-data">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-data');
+      const autoDownloadToggle = document.getElementById('auto-download');
+      const videoQualitySelect = document.getElementById('video-quality');
+      const clearCacheButton = document.getElementById('clear-cache');
+      const clearDownloadHistoryButton = document.getElementById('clear-download-history');
+      const clearSearchHistoryButton = document.getElementById('clear-search-history');
+      const exportDataButton = document.getElementById('export-data');
+
+      // Dark Mode Toggle 
+      if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+
+      // Save Preferences
+      saveButton.addEventListener('click', function () {
+        const dataSettings = {
+          autoDownload: autoDownloadToggle.checked,
+          videoQuality: videoQualitySelect.value,
+        };
+        alert('Data preferences saved successfully!');
+        console.log('Saved Data Settings:', dataSettings);
+      });
+
+      // Clear Cache
+      clearCacheButton.addEventListener('click', function () {
+        const confirmClear = confirm('Are you sure you want to clear the cache?');
+        if (confirmClear) {
+          alert('Cache cleared successfully!');
+          // Add logic to clear cache
+        }
+      });
+
+      // Clear Download History
+      clearDownloadHistoryButton.addEventListener('click', function () {
+        const confirmClear = confirm('Are you sure you want to clear download history?');
+        if (confirmClear) {
+          alert('Download history cleared successfully!');
+          // Add logic to clear download history
+        }
+      });
+
+      // Clear Search History
+      clearSearchHistoryButton.addEventListener('click', function () {
+        const confirmClear = confirm('Are you sure you want to clear search history?');
+        if (confirmClear) {
+          alert('Search history cleared successfully!');
+          // Add logic to clear search history
+        }
+      });
+
+      // Export Data
+      exportDataButton.addEventListener('click', function () {
+        alert('Your data export has started. You will receive a download link shortly.');
+        // Add logic to export data
+      });
+    });
+  </script>
+</body>
+</html>

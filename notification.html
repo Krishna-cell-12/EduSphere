@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+           /* Navbar */
+
+           body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .notification-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .notification-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          EduSphere
+        </div>
+        <div class="nav-links">
+          <a href="setting.html">back</a>
+        </div>
+      </div>
+      
+  <div class="settings-section" id="notifications-section">
+    <h2><i class="fas fa-bell"></i> Notification Settings</h2>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Email Notifications</h3>
+        <p>Receive important updates via email</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="email-notifications" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Course Updates</h3>
+        <p>Get notified when courses are updated</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="course-notifications" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Assignment Reminders</h3>
+        <p>Receive reminders about upcoming assignments</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="assignment-notifications" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Discussion Responses</h3>
+        <p>Get notified when someone responds to your discussions</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="discussion-notifications" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Grade Updates</h3>
+        <p>Get notified when your assignments are graded</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="grade-notifications" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="notification-item">
+      <div class="setting-info">
+        <h3>Marketing & Promotions</h3>
+        <p>Receive marketing emails and special offers</p>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="marketing-notifications">
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-notifications">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button type="button" class="btn btn-outline" id="mute-all">
+        <i class="fas fa-volume-mute"></i> Mute All Notifications
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-notifications');
+      const muteAllButton = document.getElementById('mute-all');
+      const checkboxes = document.querySelectorAll('.toggle-switch input');
+
+      // Dark Mode Toggle 
+      if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+
+
+
+      // Save Preferences
+      saveButton.addEventListener('click', function () {
+        const preferences = {};
+        checkboxes.forEach(checkbox => {
+          preferences[checkbox.id] = checkbox.checked;
+        });
+        alert('Preferences saved successfully!');
+        console.log('Saved Preferences:', preferences);
+      });
+
+      // Mute All Notifications
+      muteAllButton.addEventListener('click', function () {
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = false;
+        });
+        alert('All notifications muted!');
+      });
+    });
+  </script>
+</body>
+</html>

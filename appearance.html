@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #0e0e3a;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #bbb;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .color-options {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .color-option {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .color-option.active {
+      border-color: #333;
+    }
+
+    .color-blue {
+      background-color: #2196F3;
+    }
+
+    .color-purple {
+      background-color: #9C27B0;
+    }
+
+    .color-green {
+      background-color: #4CAF50;
+    }
+
+    .color-orange {
+      background-color: #FF9800;
+    }
+
+    .color-red {
+      background-color: #F44336;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.dark-mode .settings-section {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    body.dark-mode .setting-item {
+      border-bottom-color: #333;
+    }
+
+    body.dark-mode .btn-outline {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    body.dark-mode .btn-outline:hover {
+      background-color: #ffffff;
+      color: #121212;
+    }
+  </style>
+</head>
+<body>
+      <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+  <div class="settings-section" id="appearance-section">
+    <h2><i class="fas fa-palette"></i> Appearance Settings</h2>
+    
+    <div class="form-group">
+      <label>Theme Mode</label>
+      <div class="setting-item"> 
+        <div class="setting-info">
+          <h3>Dark Mode</h3>
+          <p>Switch between light and dark theme</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="dark-mode-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Theme Color</label>
+      <p class="text-muted">Choose your preferred theme color for buttons, links, and accents.</p>
+      <div class="color-options">
+        <div class="color-option color-blue active" data-color="blue"></div>
+        <div class="color-option color-purple" data-color="purple"></div>
+        <div class="color-option color-green" data-color="green"></div>
+        <div class="color-option color-orange" data-color="orange"></div>
+        <div class="color-option color-red" data-color="red"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Font Size</label>
+      <p class="text-muted">Adjust the text size for better readability.</p>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Text Size</h3>
+          <div class="text-size-preview">
+            <span id="text-size-value">Medium</span>
+          </div>
+        </div>
+        <div>
+          <input type="range" min="1" max="5" value="3" id="font-size-slider">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Layout Density</label>
+      <p class="text-muted">Adjust the spacing between elements.</p>
+      <div class="settings-grid">
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Compact</h3>
+            <p>Less white space</p>
+          </div>
+          <input type="radio" name="layout-density" value="compact">
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Normal</h3>
+            <p>Default spacing</p>
+          </div>
+          <input type="radio" name="layout-density" value="normal" checked>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <h3>Comfortable</h3>
+            <p>More white space</p>
+          </div>
+          <input type="radio" name="layout-density" value="comfortable">
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-appearance">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button type="button" class="btn btn-outline" id="reset-appearance">
+        <i class="fas fa-undo"></i> Reset to Default
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const colorOptions = document.querySelectorAll('.color-option');
+      const fontSizeSlider = document.getElementById('font-size-slider');
+      const textSizeValue = document.getElementById('text-size-value');
+      const saveButton = document.getElementById('save-appearance');
+      const resetButton = document.getElementById('reset-appearance');
+      
+
+      // Dark Mode Toggle
+      if (localStorage.getItem('darkMode') === 'true') {
+      darkModeToggle.checked = true;
+      document.body.classList.add('dark-mode');
+    }
+
+    // Dark Mode Toggle event
+    darkModeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+      // Save the dark mode state in localStorage
+      localStorage.setItem('darkMode', this.checked ? 'true' : 'false');
+    });
+
+      // Theme Color Selection
+      colorOptions.forEach(option => {
+        option.addEventListener('click', function () {
+          colorOptions.forEach(opt => opt.classList.remove('active'));
+          option.classList.add('active');
+          // Apply theme color (e.g., update CSS variables)
+          const color = option.getAttribute('data-color');
+          document.documentElement.style.setProperty('--theme-color', `var(--color-${color})`);
+        });
+      });
+
+      // Font Size Slider
+      fontSizeSlider.addEventListener('input', function () {
+        const sizes = ['Small', 'Medium', 'Large', 'X-Large', 'XX-Large'];
+        textSizeValue.textContent = sizes[fontSizeSlider.value - 1];
+        document.body.style.fontSize = `${fontSizeSlider.value * 4}px`;
+      });
+
+      // Save Preferences
+      saveButton.addEventListener('click', function () {
+        const preferences = {
+          darkMode: darkModeToggle.checked,
+          themeColor: document.querySelector('.color-option.active').getAttribute('data-color'),
+          fontSize: fontSizeSlider.value,
+          layoutDensity: document.querySelector('input[name="layout-density"]:checked').value,
+        };
+        alert('Appearance preferences saved successfully!');
+        console.log('Saved Preferences:', preferences);
+      });
+
+      // Reset to Default
+      resetButton.addEventListener('click', function () {
+        darkModeToggle.checked = false;
+        document.body.classList.remove('dark-mode');
+        colorOptions.forEach(opt => opt.classList.remove('active'));
+        document.querySelector('.color-blue').classList.add('active');
+        fontSizeSlider.value = 3;
+        textSizeValue.textContent = 'Medium';
+        document.body.style.fontSize = '16px';
+        document.querySelector('input[name="layout-density"][value="normal"]').checked = true;
+        alert('Appearance preferences reset to default!');
+      });
+    });
+  </script>
+</body>
+</html>

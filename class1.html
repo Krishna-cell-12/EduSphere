@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSphere - Class 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="class.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef2f7;
+      text-align: center;
+    }
+    .navbar {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .subject-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .subject-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      margin: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .subject-card a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: block;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">EduSphere</div>
+    <a href="courses.html" style="color: white; text-decoration: none;">Back to Courses</a>
+  </div>
+
+  <h2>Subjects for Class 1</h2>
+  <div class="subject-container">
+    <div class="subject-card"><a href="video1.html">Mathematics</a></div>
+    <div class="subject-card"><a href="video1.html">English</a></div>
+    <div class="subject-card"><a href="video1.html">Environmental Science</a></div>
+    <div class="subject-card"><a href="video1.html">Hindi</a></div>
+  </div>
+
+</body>
+</html>

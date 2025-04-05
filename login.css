@@ -1,0 +1,42 @@
+.login-box, .register-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 500px;
+  }
+  
+  .form-control, .form-select {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-gradient-primary {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: white;
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+  }
+
+  .btn-gradient-secondary {
+    background: linear-gradient(to right, #e74c3c, #f39c12);
+    color: white;
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+  }
+
+  #login {
+    background: #0e0e3a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }

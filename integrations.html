@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+             /* Navbar */
+
+             body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-success {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+  <div class="settings-section" id="integrations-section">
+    <h2><i class="fas fa-plug"></i> Integrations</h2>
+    
+    <div class="form-group">
+      <label>Connected Accounts</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Google</h3>
+          <p>Connected to john.doe@gmail.com</p>
+          <span class="badge badge-success">Connected</span>
+        </div>
+        <button class="btn btn-outline" id="disconnect-google">Disconnect</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Microsoft</h3>
+          <p>Not connected</p>
+        </div>
+        <button class="btn btn-outline" id="connect-microsoft">Connect</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Facebook</h3>
+          <p>Not connected</p>
+        </div>
+        <button class="btn btn-outline" id="connect-facebook">Connect</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>LinkedIn</h3>
+          <p>Not connected</p>
+        </div>
+        <button class="btn btn-outline" id="connect-linkedin">Connect</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Third-Party Integrations</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Calendar Integration</h3>
+          <p>Sync course schedules with your calendar</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="calendar-integration" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Cloud Storage Integration</h3>
+          <p>Connect to Google Drive, Dropbox, or OneDrive</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="cloud-integration">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-integrations">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-integrations');
+      const disconnectGoogleButton = document.getElementById('disconnect-google');
+      const connectMicrosoftButton = document.getElementById('connect-microsoft');
+      const connectFacebookButton = document.getElementById('connect-facebook');
+      const connectLinkedInButton = document.getElementById('connect-linkedin');
+      const calendarIntegrationToggle = document.getElementById('calendar-integration');
+      const cloudIntegrationToggle = document.getElementById('cloud-integration');
+
+
+      // Dark Mode Toggle
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+
+      // Save Integrations Preferences
+      saveButton.addEventListener('click', function () {
+        const integrationsSettings = {
+          calendarIntegration: calendarIntegrationToggle.checked,
+          cloudIntegration: cloudIntegrationToggle.checked,
+        };
+        alert('Integrations preferences saved successfully!');
+        console.log('Saved Integrations Settings:', integrationsSettings);
+      });
+
+      // Disconnect Google
+      disconnectGoogleButton.addEventListener('click', function () {
+        const confirmDisconnect = confirm('Are you sure you want to disconnect Google?');
+        if (confirmDisconnect) {
+          alert('Google account disconnected successfully!');
+          // Add logic to disconnect Google
+        }
+      });
+
+      // Connect Microsoft
+      connectMicrosoftButton.addEventListener('click', function () {
+        alert('Redirecting to Microsoft login...');
+        // Add logic to connect Microsoft
+      });
+
+      // Connect Facebook
+      connectFacebookButton.addEventListener('click', function () {
+        alert('Redirecting to Facebook login...');
+        // Add logic to connect Facebook
+      });
+
+      // Connect LinkedIn
+      connectLinkedInButton.addEventListener('click', function () {
+        alert('Redirecting to LinkedIn login...');
+        // Add logic to connect LinkedIn
+      });
+    });
+  </script>
+</body>
+</html>

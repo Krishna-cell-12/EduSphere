@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">EduSphere</div>
+    <div class="nav-links">
+      <a href="courses.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+<section class="dashboard-hero">
+    <h1>Welcome Back, Student!</h1>
+    <p>Continue your journey towards accessible, inclusive, and personalized education.</p>
+    <a href="courses.html">
+      <button class="cta-button" onclick="startLearning()">Explore Courses</button>
+    </a>
+  </section>
+
+ <!-- Courses Section -->
+<section id="courses" class="dashboard-courses">
+    <h2>Your Courses</h2>
+    <div class="course-cards">
+      <div class="course-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Introduction to Programming</h3>
+        <p>Learn the basics of coding with Python and JavaScript.</p>
+        <button class="cta-button">Continue</button>
+      </div>
+      <div class="course-card">
+        <i class="fas fa-calculator"></i>
+        <h3>Mathematics for Beginners</h3>
+        <p>Master the fundamentals of algebra and geometry.</p>
+        <button class="cta-button">Continue</button>
+      </div>
+      <div class="course-card">
+        <i class="fas fa-globe"></i>
+        <h3>Digital Literacy</h3>
+        <p>Understand the basics of using technology effectively.</p>
+        <button class="cta-button">Continue</button>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy; 2023 EduSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function startLearning(course) {
+        alert(`Starting ${course}!`);
+    }
+</script>
+</body>
+</html>

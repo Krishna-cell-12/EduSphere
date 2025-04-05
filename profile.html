@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EduSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #0e0e3a;
+            color: white;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+        }
+        .nav-links a {
+            color: #bbb;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        .profile-container {
+            display: flex;
+        }
+        .sidebar {
+            width: 300px;
+            background: #0e0e3a;
+            color: white;
+            padding: 2rem;
+            height: 100vh;
+        }
+        .sidebar a {
+            display: block;
+            padding: 0.8rem 0;
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover {
+            color: #3498db;
+            padding-left: 10px;
+        }
+        .profile-content {
+            flex: 1;
+            padding: 2rem;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #3498db;
+            object-fit: cover;
+        }
+        .profile-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .details-section {
+            margin-top: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .detail-item i {
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        .detail-value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">EduSphere</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="features.html">Features</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+    
+    <div class="profile-container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <a href="#overview"><i class="fas fa-home"></i> Overview</a>
+            <a href="courses.html"><i class="fas fa-book"></i> My Courses</a>
+            <a href="#progress"><i class="fas fa-chart-line"></i> Progress</a>
+            <a href="setting.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-header">
+                <img src="profile-pic.png" alt="Profile Picture">
+                <div>
+                    <h1 id="userName">User Name</h1>
+                    <p id="userEmail">Email: user@example.com</p>
+                </div>
+            </div>
+            
+            <div class="details-section">
+                <h2><i class="fas fa-user"></i> Personal Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p>Living City</p>
+                            <p class="detail-value" id="userCity"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>Contact</p>
+                            <p class="detail-value" id="userPhone"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <p>Language</p>
+                            <p class="detail-value" id="userLanguage"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>
+                            <p>Date of Birth</p>
+                            <p class="detail-value" id="userDOB"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <h2><i class="fas fa-graduation-cap"></i></h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-chalkboard"></i>
+                        <div>
+                            <p>Class</p>
+                            <p class="detail-value" id="userClass"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <p>Exam</p>
+                            <p class="detail-value" id="userExam"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-book-reader"></i>
+                        <div>
+                            <p>Stream</p>
+                            <p class="detail-value" id="userStream"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-percentage"></i>
+                        <div>
+                            <p>Average Score</p>
+                            <p class="detail-value" id="userScore"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is logged in when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const userData = JSON.parse(sessionStorage.getItem('userProfile'));
+            if (!userData) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Populate user data from sessionStorage
+            document.getElementById('userName').textContent = userData.fullName || 'User Name';
+            document.getElementById('userEmail').textContent = `Email: ${userData.email}`;
+            document.getElementById('userCity').textContent = userData.city || 'Not specified';
+            document.getElementById('userPhone').textContent = userData.phone || 'Not specified';
+            document.getElementById('userLanguage').textContent = userData.language || 'Not specified';
+            document.getElementById('userDOB').textContent = userData.dob || 'Not specified';
+            document.getElementById('userClass').textContent = userData.class || 'Not specified';
+            document.getElementById('userExam').textContent = userData.exam || 'Not specified';
+            document.getElementById('userStream').textContent = userData.stream || 'Not specified';
+            document.getElementById('userScore').textContent = userData.score || 'Not specified';
+        });
+
+        function logout() {
+            sessionStorage.removeItem('userProfile');
+            alert('Logged out successfully!');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+            /* Navbar */
+
+            body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+
+    .text-muted {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .verification-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .verification-method {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .verification-method i {
+      font-size: 20px;
+      color: #2196F3;
+    }
+
+    .verification-method h3 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .verification-method p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .badge-success {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .badge-info {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .badge-warning {
+      background-color: #FF9800;
+      color: white;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-danger {
+      background-color: #F44336;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #D32F2F;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+    
+  <div class="settings-section" id="privacy-section">
+    <h2><i class="fas fa-shield-alt"></i> Privacy & Security</h2>
+    
+    <div class="form-group">
+      <label>Profile Visibility</label>
+      <p class="text-muted">Control who can see your profile information</p>
+      <select id="profile-visibility" class="form-control">
+        <option value="public">Public - Anyone can see your profile</option>
+        <option value="students">Students Only - Only enrolled students can see your profile</option>
+        <option value="connections">Connections Only - Only your connections can see your profile</option>
+        <option value="private">Private - Your profile is hidden from others</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>Two-Factor Authentication</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Enable 2FA</h3>
+          <p>Add an extra layer of security to your account</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="two-factor-auth">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="verification-methods">
+      <div class="verification-method">
+        <i class="fas fa-mobile-alt"></i>
+        <div>
+          <h3>SMS Verification</h3>
+          <p>Receive verification codes via text message</p>
+        </div>
+        <input type="radio" name="verification-method" value="sms">
+      </div>
+      
+      <div class="verification-method">
+        <i class="fas fa-key"></i>
+        <div>
+          <h3>Authenticator App</h3>
+          <p>Use an app like Google Authenticator</p>
+        </div>
+        <input type="radio" name="verification-method" value="app" checked>
+      </div>
+      
+      <div class="verification-method">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <h3>Email Verification</h3>
+          <p>Receive verification codes via email</p>
+        </div>
+        <input type="radio" name="verification-method" value="email">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Session Management</label>
+      <p class="text-muted">Manage your active sessions and sign out from other devices</p>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Current Session</h3>
+          <p>Browser: Chrome on Windows - Last active: Just now</p>
+          <span class="badge badge-success">Current</span>
+        </div>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Mobile App Session</h3>
+          <p>iPhone 13 - Last active: 2 hours ago</p>
+          <span class="badge badge-info">Active</span>
+        </div>
+        <button class="btn btn-outline">Sign Out</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Tablet Session</h3>
+          <p>iPad Pro - Last active: 3 days ago</p>
+          <span class="badge badge-warning">Inactive</span>
+        </div>
+        <button class="btn btn-outline">Sign Out</button>
+      </div>
+    </div>
+    
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-privacy">
+        <i class="fas fa-save"></i> Save Settings
+      </button>
+      <button type="button" class="btn btn-danger" id="sign-out-all">
+        <i class="fas fa-sign-out-alt"></i> Sign Out All Devices
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-privacy');
+      const signOutAllButton = document.getElementById('sign-out-all');
+      const twoFactorAuthToggle = document.getElementById('two-factor-auth');
+      const verificationMethods = document.querySelectorAll('input[name="verification-method"]');
+      const profileVisibility = document.getElementById('profile-visibility');
+
+
+      // Dark Mode Toggle 
+      if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+
+      // Save Privacy Settings
+      saveButton.addEventListener('click', function () {
+        const privacySettings = {
+          profileVisibility: profileVisibility.value,
+          twoFactorAuth: twoFactorAuthToggle.checked,
+          verificationMethod: document.querySelector('input[name="verification-method"]:checked').value,
+        };
+        alert('Privacy settings saved successfully!');
+        console.log('Saved Privacy Settings:', privacySettings);
+      });
+
+      // Sign Out All Devices
+      signOutAllButton.addEventListener('click', function () {
+        const confirmSignOut = confirm('Are you sure you want to sign out of all devices?');
+        if (confirmSignOut) {
+          alert('You have been signed out of all devices.');
+          // Add logic to sign out all sessions
+        }
+      });
+
+      // Enable/Disable Verification Methods based on 2FA Toggle
+      twoFactorAuthToggle.addEventListener('change', function () {
+        verificationMethods.forEach(method => {
+          method.disabled = !twoFactorAuthToggle.checked;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

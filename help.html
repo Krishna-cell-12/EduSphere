@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+            /* Navbar */
+
+            body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+            
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+    
+  <div class="settings-section" id="help-section">
+    <h2><i class="fas fa-question-circle"></i> Help & Support</h2>
+    
+    <div class="form-group">
+      <label>Documentation</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>User Guide</h3>
+          <p>View comprehensive documentation for EduSphere</p>
+        </div>
+        <button class="btn btn-outline" id="view-guide">View Guide</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Video Tutorials</h3>
+          <p>Watch step-by-step tutorials</p>
+        </div>
+        <button class="btn btn-outline" id="watch-tutorials">Watch Tutorials</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>FAQs</h3>
+          <p>Browse frequently asked questions</p>
+        </div>
+        <button class="btn btn-outline" id="view-faqs">View FAQs</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Contact Support</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Support Ticket</h3>
+          <p>Create a support ticket for technical issues</p>
+        </div>
+        <button class="btn btn-outline" id="create-ticket">Create Ticket</button>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Live Chat</h3>
+          <p>Chat with our support team</p>
+        </div>
+        <button class="btn btn-outline" id="start-chat">Start Chat</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Feedback</label>
+      <textarea id="feedback" class="form-control" rows="4" placeholder="Share your feedback and suggestions to help us improve"></textarea>
+      <div class="buttons-group" style="margin-top: 1rem;">
+        <button type="button" class="btn btn-primary" id="send-feedback">
+          <i class="fas fa-paper-plane"></i> Send Feedback
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const viewGuideButton = document.getElementById('view-guide');
+      const watchTutorialsButton = document.getElementById('watch-tutorials');
+      const viewFAQsButton = document.getElementById('view-faqs');
+      const createTicketButton = document.getElementById('create-ticket');
+      const startChatButton = document.getElementById('start-chat');
+      const sendFeedbackButton = document.getElementById('send-feedback');
+      const feedbackTextarea = document.getElementById('feedback');
+
+      // Dark Mode Toggle
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+
+      // View User Guide
+      viewGuideButton.addEventListener('click', function () {
+        alert('Redirecting to the User Guide...');
+        // Add logic to redirect to the user guide
+      });
+
+      // Watch Video Tutorials
+      watchTutorialsButton.addEventListener('click', function () {
+        alert('Redirecting to Video Tutorials...');
+        // Add logic to redirect to video tutorials
+      });
+
+      // View FAQs
+      viewFAQsButton.addEventListener('click', function () {
+        alert('Redirecting to FAQs...');
+        // Add logic to redirect to FAQs
+      });
+
+      // Create Support Ticket
+      createTicketButton.addEventListener('click', function () {
+        alert('Redirecting to Support Ticket creation...');
+        // Add logic to create a support ticket
+      });
+
+      // Start Live Chat
+      startChatButton.addEventListener('click', function () {
+        alert('Starting Live Chat...');
+        // Add logic to start live chat
+      });
+
+      // Send Feedback
+      sendFeedbackButton.addEventListener('click', function () {
+        const feedback = feedbackTextarea.value.trim();
+        if (feedback) {
+          alert('Thank you for your feedback!');
+          console.log('Feedback:', feedback);
+          feedbackTextarea.value = ''; // Clear the textarea
+        } else {
+          alert('Please enter your feedback before sending.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+      /* Navbar */
+
+      body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-control:focus {
+      border-color: #2196F3;
+      outline: none;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+    }
+
+    select.form-control[multiple] {
+      height: 120px;
+    }
+
+    .text-muted {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #2196F3;
+      color: #2196F3;
+    }
+
+    .btn-outline:hover {
+      background-color: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+
+  <div class="settings-section" id="profile-section">
+    <h2><i class="fas fa-id-card"></i> Profile Settings</h2>
+    
+    <form id="profile-form">
+      <div class="form-group">
+        <label for="user-bio">Bio</label>
+        <textarea id="user-bio" class="form-control" rows="4" placeholder="Tell others about yourself"></textarea>
+        <p class="text-muted">Share a brief description about yourself. This will be visible on your public profile.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="user-location">Location</label>
+        <input type="text" id="user-location" class="form-control" placeholder="City, Country">
+      </div>
+
+      <div class="form-group">
+        <label for="user-phone">Phone Number</label>
+        <input type="tel" id="user-phone" class="form-control" placeholder="+1 123 456 7890">
+      </div>
+
+      <div class="form-group">
+        <label for="education-level">Education Level</label>
+        <select id="education-level" class="form-control">
+          <option value="" disabled selected>Select your education level</option>
+          <option value="primary">Primary School</option>
+          <option value="secondary">Secondary School</option>
+          <option value="undergraduate">Undergraduate</option>
+          <option value="graduate">Graduate</option>
+          <option value="postgraduate">Postgraduate</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="learning-interests">Learning Interests</label>
+        <select id="learning-interests" class="form-control" multiple>
+          <option value="math">Mathematics</option>
+          <option value="science">Science</option>
+          <option value="programming">Programming</option>
+          <option value="languages">Languages</option>
+          <option value="arts">Arts & Humanities</option>
+          <option value="business">Business</option>
+          <option value="health">Health & Wellness</option>
+        </select>
+        <p class="text-muted">Hold Ctrl (or Command on Mac) to select multiple interests.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="learning-goals">Learning Goals</label>
+        <textarea id="learning-goals" class="form-control" rows="4" placeholder="What do you hope to achieve through EduSphere?"></textarea>
+      </div>
+
+      <div class="buttons-group">
+        <button type="button" class="btn btn-primary" id="save-profile">
+          <i class="fas fa-save"></i> Save Profile
+        </button>
+        <button type="button" class="btn btn-outline" id="preview-profile">
+          <i class="fas fa-eye"></i> Preview Profile
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-profile');
+      const previewButton = document.getElementById('preview-profile');
+      const profileForm = document.getElementById('profile-form');
+
+
+      // Dark Mode Toggle
+      if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    
+      // Save Profile
+      saveButton.addEventListener('click', function () {
+        const profileData = {
+          bio: document.getElementById('user-bio').value,
+          location: document.getElementById('user-location').value,
+          phone: document.getElementById('user-phone').value,
+          educationLevel: document.getElementById('education-level').value,
+          learningInterests: Array.from(document.getElementById('learning-interests').selectedOptions).map(option => option.value),
+          learningGoals: document.getElementById('learning-goals').value,
+        };
+        alert('Profile saved successfully!');
+        console.log('Profile Data:', profileData);
+      });
+
+      // Preview Profile
+      previewButton.addEventListener('click', function () {
+        const profileData = {
+          bio: document.getElementById('user-bio').value,
+          location: document.getElementById('user-location').value,
+          phone: document.getElementById('user-phone').value,
+          educationLevel: document.getElementById('education-level').value,
+          learningInterests: Array.from(document.getElementById('learning-interests').selectedOptions).map(option => option.value),
+          learningGoals: document.getElementById('learning-goals').value,
+        };
+        alert('Profile Preview:\n\n' + JSON.stringify(profileData, null, 2));
+      });
+    });
+  </script>
+</body>
+</html>

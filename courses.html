@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSphere - Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-graduation-cap"></i>
+      EduSphere
+    </div>
+    <div class="nav-items">
+      <a href="dashboard.html" class="tooltip" data-tooltip="Go to Dashboard">
+         Dashboard
+      </a>
+      <a href="profile.html" class="tooltip" data-tooltip="View Profile">
+        Profile
+      </a>
+      <a href="notification.html" class="tooltip" data-tooltip="Notifications">
+        Notifications
+        <a href="setting.html" class="tooltip" data-tooltip="Settings">
+          setting
+      </a>
+      <a href="index.html" class="tooltip" data-tooltip="Logout">
+         Logout
+      </a>
+    </div>
+  </nav>
+
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Search for classes...">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+
+  <div class="filter-pills">
+    <div class="filter-pill active">All Classes</div>
+    <div class="filter-pill">My Enrolled</div>
+  </div>
+
+  <header class="page-header">
+    <h2>Your Learning Journey</h2>
+    <p>Select a class to begin your educational adventure</p>
+  </header>
+
+  <div class="card-container">
+    <div class="card" style="--animation-order: 1">
+      <span class="notification-dot"></span>
+      <a href="class1.html">
+        <i class="fas fa-child icon"></i>
+        Class 1
+        <p class="description">Foundation learning for young minds</p>
+      </a>
+    </div>
+    <div class="card" style="--animation-order: 2">
+      <a href="class2.html">
+        <i class="fas fa-book icon"></i>
+        Class 2
+        <p class="description">Building essential knowledge</p>
+      </a>
+    </div>
+    <div class="card" style="--animation-order: 3">
+      <span class="achievement-badge">New</span>
+      <a href="class3.html">
+        <i class="fas fa-pencil-alt icon"></i>
+        Class 3
+        <p class="description">Expanding horizons with new subjects</p>
+      </a>
+    </div>
+    <div class="card" style="--animation-order: 4">
+      <a href="class4.html">
+        <i class="fas fa-microscope icon"></i>
+        Class 4
+        <p class="description">Dive deeper into complex concepts</p>
+      </a>
+    </div>
+    <div class="card" style="--animation-order: 5">
+      <span class="achievement-badge">Hot</span>
+      <a href="class5.html">
+        <i class="fas fa-rocket icon"></i>
+        Class 5
+        <p class="description">Advanced learning for curious minds</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <h3>Your Progress</h3>
+    <div class="progress-bar">
+      <div class="progress-fill" style="--progress: 0%"></div>
+    </div>
+    <div class="progress-label">
+      <span>Current Progress: 0%</span>
+      <span>Target: 100%</span>
+    </div>
+    <p>Keep going! You're making excellent progress.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>EduSphere</h3>
+        <p>Empowering students with accessible, engaging education for a brighter future.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>Email: info@edusphere.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 EduSphere. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Search functionality
+      const searchBox = document.querySelector('.search-box');
+      const cards = document.querySelectorAll('.card');
+      
+      searchBox.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        cards.forEach(card => {
+          const cardText = card.textContent.toLowerCase();
+          if (cardText.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+      
+      // Filter pills
+      const filterPills = document.querySelectorAll('.filter-pill');
+      
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          // Remove active class from all pills
+          filterPills.forEach(p => p.classList.remove('active'));
+          // Add active class to clicked pill
+          this.classList.add('active');
+          
+          // Filter functionality would be implemented here
+          // This is just a UI demonstration
+        });
+      });
+    });
+  </script>
+</body>
+</html>

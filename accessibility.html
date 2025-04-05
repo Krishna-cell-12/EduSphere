@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - EduSphere</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* General Styles */
+            /* Navbar */
+
+            body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0e0e3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      color: #444;
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .settings-section {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .form-group label {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+    }
+
+    .setting-info h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .setting-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 0;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .buttons-group {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1976D2;
+    }
+
+    /* High Contrast Mode */
+    body.high-contrast {
+      background-color: #000;
+      color: #fff;
+    }
+
+    body.high-contrast .settings-section {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.high-contrast .setting-item {
+      border-bottom-color: #555;
+    }
+
+    body.high-contrast .btn-primary {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    body.high-contrast .btn-primary:hover {
+      background-color: #e6b800;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        EduSphere
+      </div>
+      <div class="nav-links">
+        <a href="setting.html">back</a>
+      </div>
+    </div>
+    
+  <div class="settings-section" id="accessibility-section">
+    <h2><i class="fas fa-universal-access"></i> Accessibility</h2>
+    
+    <div class="form-group">
+      <label>Screen Reader Compatibility</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Optimized for Screen Readers</h3>
+          <p>Enhanced navigation for screen reader users</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="screen-reader-mode">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Motion Reduction</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Reduce Animations</h3>
+          <p>Minimize motion for users sensitive to animations</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="reduce-motion">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Contrast Settings</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>High Contrast Mode</h3>
+          <p>Increase text and UI element contrast</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="high-contrast">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Caption Preferences</label>
+      <div class="setting-item">
+        <div class="setting-info">
+          <h3>Always Show Captions</h3>
+          <p>Automatically enable captions for video content</p>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="auto-captions" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="buttons-group">
+      <button type="button" class="btn btn-primary" id="save-accessibility">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for interactivity
+    document.addEventListener('DOMContentLoaded', function () {
+      const saveButton = document.getElementById('save-accessibility');
+      const screenReaderToggle = document.getElementById('screen-reader-mode');
+      const reduceMotionToggle = document.getElementById('reduce-motion');
+      const highContrastToggle = document.getElementById('high-contrast');
+      const autoCaptionsToggle = document.getElementById('auto-captions');
+
+      // Dark Mode Toggle
+      if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+
+      // Save Accessibility Preferences
+      saveButton.addEventListener('click', function () {
+        const accessibilitySettings = {
+          screenReaderMode: screenReaderToggle.checked,
+          reduceMotion: reduceMotionToggle.checked,
+          highContrast: highContrastToggle.checked,
+          autoCaptions: autoCaptionsToggle.checked,
+        };
+        alert('Accessibility preferences saved successfully!');
+        console.log('Saved Accessibility Settings:', accessibilitySettings);
+      });
+
+      // High Contrast Mode
+      highContrastToggle.addEventListener('change', function () {
+        document.body.classList.toggle('high-contrast', highContrastToggle.checked);
+      });
+
+      // Reduced Motion
+      reduceMotionToggle.addEventListener('change', function () {
+        if (reduceMotionToggle.checked) {
+          document.documentElement.style.setProperty('--animation-duration', '0s');
+        } else {
+          document.documentElement.style.removeProperty('--animation-duration');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

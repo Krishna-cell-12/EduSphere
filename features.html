@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSphere - Features</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="features.css"> <!-- New CSS file for features page -->
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-graduation-cap"></i>
+      EduSphere
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="features-hero">
+    <h1>Discover Our Features</h1>
+    <div class="cta-container">
+      <a href="login.html">
+        <button class="cta-button">Get Started</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Our Features</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <i class="fas fa-brain"></i>
+        <h3>AI-Powered Learning</h3>
+        <p>Personalized learning paths tailored to your needs.</p>
+        <button class="cta-button" onclick="startLearning('AI-Powered Learning')">Learn More</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-globe"></i>
+        <h3>Global Access</h3>
+        <p>Learn anytime, anywhere, even offline.</p>
+        <button class="cta-button" onclick="startLearning('Global Access')">Learn More</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Community-Driven</h3>
+        <p>Collaborate with peers and educators worldwide.</p>
+        <button class="cta-button" onclick="startLearning('Community-Driven')">Learn More</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Progress Tracking</h3>
+        <p>Track your learning progress with detailed analytics.</p>
+        <button class="cta-button" onclick="startLearning('Progress Tracking')">Learn More</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certifications</h3>
+        <p>Earn certificates upon course completion.</p>
+        <button class="cta-button" onclick="startLearning('Certifications')">Learn More</button>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile-Friendly</h3>
+        <p>Access courses on the go with our mobile app.</p>
+        <button class="cta-button" onclick="startLearning('Mobile-Friendly')">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <p>"EduSphere has transformed the way I learn. The AI-powered recommendations are spot on!"</p>
+        <span>- Yug Wankhede</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The community features are amazing. I've connected with so many like-minded learners."</p>
+        <span>- Anand Sonsali</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The progress tracking keeps me motivated. I can see my improvement every day!"</p>
+        <span>- Pratham Shah</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>&copy; 2025 EduSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function startLearning(feature) {
+      alert(`Starting ${feature}!`);
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <style>
+    /* Features Page Specific Styles */
+.features-hero {
+  background: linear-gradient(135deg, #0e0e3a, #3498db);
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.features-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+}
+
+.features-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.features-hero .cta-button {
+  background: #e74c3c;
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  animation: fadeInUp 1.5s ease;
+}
+
+.features-hero .cta-button:hover {
+  background: #c0392b;
+  transform: translateY(-5px);
+}
+
+.features {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--background-light);
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  animation: fadeIn 1s ease;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.feature-cards .card {
+  background: var(--background-white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.5s ease;
+}
+
+.feature-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.feature-cards .card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+.feature-cards .card:hover i {
+  color: #e74c3c;
+}
+
+.feature-cards .card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.feature-cards .card p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.feature-cards .card .cta-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.feature-cards .card .cta-button:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+}
+
+.testimonials {
+  padding: 4rem 2rem;
+  background: var(--background-white);
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  animation: fadeIn 1s ease;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.testimonial-card {
+  background: var(--background-light);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.5s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+  </style>
+</body>
+</html>
